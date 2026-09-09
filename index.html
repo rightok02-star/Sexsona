@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phantom Hearts: Royal Desire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <!-- Title Screen -->
+    <div id="title-screen" class="screen active">
+      <h1>Phantom Hearts</h1>
+      <h2>Royal Desire</h2>
+      <p class="subtitle">Adult Parody – Private Build</p>
+      <button id="btn-new-game">New Game</button>
+      <button id="btn-continue" class="hidden">Continue</button>
+    </div>
+
+    <!-- Main Game Screen -->
+    <div id="game-screen" class="screen">
+      <div id="top-bar">
+        <div id="party-status"></div>
+        <div id="day-night">Day 1 – Afternoon</div>
+      </div>
+
+      <div id="main-area">
+        <div id="image-panel">
+          <img id="scene-image" src="images/ui/background_day.jpg" alt="Scene">
+        </div>
+        <div id="text-panel">
+          <div id="speaker-name"></div>
+          <div id="dialogue-text"></div>
+          <div id="choices"></div>
+          <button id="btn-next" class="hidden">Next</button>
+        </div>
+      </div>
+
+      <div id="combat-panel" class="hidden">
+        <div id="enemy-info"></div>
+        <div id="combat-log"></div>
+        <div id="combat-actions"></div>
+      </div>
+    </div>
+
+    <!-- Sex Scene Overlay -->
+    <div id="sex-overlay" class="screen hidden">
+      <img id="sex-image" src="" alt="Scene">
+      <div id="sex-text"></div>
+      <button id="btn-sex-continue">Continue</button>
+    </div>
+  </div>
+
+  <script src="story.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
