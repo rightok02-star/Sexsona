@@ -1,0 +1,253 @@
+:root {
+  --bg: #0d0d12;
+  --panel: #1a1a24;
+  --accent: #e63956;
+  --accent2: #7b2cbf;
+  --text: #f0e6ff;
+  --muted: #a89bb9;
+  --success: #2ec4b6;
+  --danger: #e63956;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 95vh;
+  background: var(--panel);
+  border: 2px solid #2a2a3a;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 40px rgba(230, 57, 86, 0.15);
+}
+
+.screen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* Title */
+#title-screen {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0d0d12 0%, #1a0a1f 100%);
+}
+
+#title-screen h1 {
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(230, 57, 86, 0.5);
+}
+
+#title-screen h2 {
+  font-size: 1.8rem;
+  color: var(--accent2);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 8px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 57, 86, 0.4);
+}
+
+button.hidden {
+  display: none;
+}
+
+/* Top bar */
+#top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #12121a;
+  border-bottom: 1px solid #2a2a3a;
+  font-size: 0.95rem;
+}
+
+#party-status {
+  display: flex;
+  gap: 12px;
+}
+
+.party-member {
+  background: #1f1f2e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+/* Main area */
+#main-area {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+#image-panel {
+  flex: 1.2;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#scene-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#text-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #14141e;
+  border-left: 1px solid #2a2a3a;
+}
+
+#speaker-name {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+  min-height: 1.2em;
+}
+
+#dialogue-text {
+  flex: 1;
+  line-height: 1.5;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+}
+
+#choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#choices button {
+  text-align: left;
+  background: #252538;
+  border: 1px solid #3a3a55;
+}
+
+#choices button:hover {
+  background: var(--accent2);
+  border-color: var(--accent2);
+}
+
+#btn-next {
+  align-self: flex-end;
+}
+
+/* Combat */
+#combat-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 18, 0.95);
+  border-top: 2px solid var(--accent);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#enemy-info {
+  font-size: 1.1rem;
+  color: var(--danger);
+}
+
+#combat-log {
+  height: 80px;
+  overflow-y: auto;
+  background: #0a0a12;
+  padding: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+#combat-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#combat-actions button {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* Sex overlay */
+#sex-overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  z-index: 50;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#sex-image {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;
+  border: 2px solid var(--accent);
+}
+
+#sex-text {
+  margin: 16px 20px;
+  text-align: center;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none !important;
+}
